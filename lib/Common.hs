@@ -1,4 +1,6 @@
-module Common (someFunc) where
+module Common where
+import Text.Printf (printf)
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+getInput :: Int -> IO String
+getInput n =
+    readFile $ printf "inputs/Day%d" n
