@@ -4,11 +4,11 @@ import Common (getInput)
 
 import Data.List
 
-solve1 :: IO String -> IO Int
-solve1 io = sumHighest 1 . parse <$> io
+solve1 :: String -> Int
+solve1 s = sumHighest 1 $ parse s
 
-solve2 :: IO String -> IO Int
-solve2 io = sumHighest 3 . parse <$> io
+solve2 :: String -> Int
+solve2 s = sumHighest 3 $ parse s
 
 splitOn :: Eq a => a -> [a] -> [[a]]
 splitOn p xs = f xs []
