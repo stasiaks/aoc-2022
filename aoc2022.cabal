@@ -11,22 +11,21 @@ maintainer:         12955338+stasiaks@users.noreply.github.com
 copyright:          2022 Sebastian Stasiak
 
 library
-    exposed-modules:  Common
+    exposed-modules:
+        Common,
+        Day1
 
     hs-source-dirs:   lib
     default-language: Haskell2010
     build-depends:    base ^>=4.16.3.0
 
-common day
-    hs-source-dirs:   app
+executable solve
     default-language: Haskell2010
+    hs-source-dirs:   app
+    main-is:          Main.hs
     build-depends:
         base ^>=4.16.3.0,
         aoc2022
-
-executable Day1
-    import:           day
-    main-is:          Day1.hs
 
 test-suite test
     default-language: Haskell2010
