@@ -5,6 +5,7 @@ import Text.Printf (printf)
 import qualified Day1
 import qualified Day2
 import qualified Day3
+import qualified Day4
 
 main :: IO ()
 main = defaultMain tests
@@ -21,6 +22,7 @@ solutions = testGroup "Daily solutions"
     [ day1
     , day2
     , day3
+    , day4
     ]
 
 day1 :: TestTree
@@ -39,4 +41,10 @@ day3 :: TestTree
 day3 = testGroup "Day 3"
     [ testCase "Part 1" $ getTestFile "Day3" >>= (@?= 157) . Day3.solve1
     , testCase "Part 2" $ getTestFile "Day3" >>= (@?= 70) . Day3.solve2
+    ]
+
+day4 :: TestTree
+day4 = testGroup "Day 4"
+    [ testCase "Part 1" $ getTestFile "Day4" >>= (@?= 2) . Day4.solve1
+    , testCase "Part 2" $ getTestFile "Day4" >>= (@?= 4) . Day4.solve2
     ]
