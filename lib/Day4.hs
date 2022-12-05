@@ -1,6 +1,6 @@
 module Day4 (solve1, solve2) where
 
-import Common (getInput, splitOn)
+import Common (getInput, splitOn, tuple)
 
 import qualified Data.Set as Set
 import Data.Char
@@ -34,6 +34,3 @@ parseRange x = tuple $ map read $ splitOn '-' x
     where f [x] = (x, 0)
           f [x, y] = (x, y)
           f _ = (0, 0)
-
-tuple :: [a] -> (a, a)
-tuple (x : y : _) = (x, y)
