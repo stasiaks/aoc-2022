@@ -1,4 +1,4 @@
-module Common (getInput, splitOn) where
+module Common (getInput, splitOn, tuple) where
 import Text.Printf (printf)
 
 getInput :: Int -> IO String
@@ -11,3 +11,6 @@ splitOn p xs = f xs []
           f (y : ys) acc = if p == y
                            then acc : f ys []
                            else f ys $ acc ++ [y]
+
+tuple :: [a] -> (a, a)
+tuple (x : y : _) = (x, y)

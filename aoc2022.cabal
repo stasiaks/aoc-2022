@@ -17,6 +17,7 @@ library
         Day2
         Day3
         Day4
+        Day5
 
     hs-source-dirs:   lib
     default-language: Haskell2010
