@@ -17,8 +17,8 @@ main = do
       n:_ -> runDay n
 
 runDay :: String -> IO ()
-runDay ('D' : 'a' : 'y' : '0' : n) = runDay n
 runDay ('D' : 'a' : 'y' : n) = runDay n
+runDay ('0' : n) = runDay n
 runDay "1" = printDay (getInput 1) Day1.solve1 Day1.solve2
 runDay "2" = printDay (getInput 2) Day2.solve1 Day2.solve2
 runDay "3" = printDay (getInput 3) Day3.solve1 Day3.solve2
