@@ -19,14 +19,13 @@ parseInput :: String -> [[Int]]
 parseInput s = fromRight [] $ parse input [] s
 
 input :: GenParser Char st [[Int]]
-input = sepBy section eol
+input = sepBy section newline
 
 section :: GenParser Char st [Int]
-section = endBy number eol
+section = endBy number newline
 
 number :: GenParser Char st Int
 number = do
     result <- many1 digit
     return $ read result
 
-eol = char '\n'
