@@ -1,5 +1,7 @@
 module Day1 (solve1, solve2) where
 
+import Common.Parser (number)
+
 import Data.List
 import Text.ParserCombinators.Parsec
 import Data.Either (fromRight)
@@ -23,9 +25,4 @@ input = sepBy section newline
 
 section :: GenParser Char st [Int]
 section = endBy number newline
-
-number :: GenParser Char st Int
-number = do
-    result <- many1 digit
-    return $ read result
 

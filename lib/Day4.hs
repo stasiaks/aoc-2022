@@ -1,5 +1,7 @@
 module Day4 (solve1, solve2) where
 
+import Common.Parser (number)
+
 import Data.Either (fromRight)
 import Text.ParserCombinators.Parsec
 
@@ -42,9 +44,4 @@ range = do
     char '-'
     two <- number
     return (one, two)
-
-number :: GenParser Char st Int
-number = do
-    result <- many1 digit
-    return $ read result
 
