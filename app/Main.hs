@@ -6,6 +6,8 @@ import qualified Day4
 import qualified Day5
 import qualified Day6
 import qualified Day7
+import qualified Day8
+import qualified Day9
 
 import System.Environment (getArgs)
 import Text.Printf (printf)
@@ -27,6 +29,8 @@ runDay "4" = printDay (getInput 4) Day4.solve1 Day4.solve2
 runDay "5" = printDay (getInput 5) Day5.solve1 Day5.solve2
 runDay "6" = printDay (getInput 6) Day6.solve1 Day6.solve2
 runDay "7" = printDay (getInput 7) Day7.solve1 Day7.solve2
+runDay "8" = printDay (getInput 8) Day8.solve1 Day8.solve2
+runDay "9" = printDay (getInput 9) Day9.solve1 Day9.solve2
 runDay x = putStrLn $ printf "No solution for day '%s' exists" x
 
 printDay :: Show a => IO String -> (String -> a) -> (String -> a) -> IO ()
