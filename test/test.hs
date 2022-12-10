@@ -11,6 +11,7 @@ import qualified Day6
 import qualified Day7
 import qualified Day8
 import qualified Day9
+import qualified Day10
 
 main :: IO ()
 main = defaultMain tests
@@ -33,6 +34,7 @@ solutions = testGroup "Daily solutions"
     , day7
     , day8
     , day9
+    , day10
     ]
 
 day1 :: TestTree
@@ -96,5 +98,11 @@ day9 = testGroup "Day 9"
     [ testCase "Part 1 (1)" $ getTestFile "Day9_1" >>= (@?= 13) . Day9.solve1
     , testCase "Part 2 (1)" $ getTestFile "Day9_1" >>= (@?= 1)  . Day9.solve2
     , testCase "Part 2 (2)" $ getTestFile "Day9_2" >>= (@?= 36) . Day9.solve2
+    ]
+
+day10 :: TestTree
+day10 = testGroup "Day 10"
+    [ testCase "Part 1" $ getTestFile "Day10" >>= (@?= 13140) . Day10.solve1
+    , testCase "Part 2" $ getTestFile "Day10" >>= (@?= "##..##..##..##..##..##..##..##..##..##..\n###...###...###...###...###...###...###.\n####....####....####....####....####....\n#####.....#####.....#####.....#####.....\n######......######......######......####\n#######.......#######.......#######.....")  . Day10.solve2
     ]
 

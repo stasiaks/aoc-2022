@@ -4,5 +4,8 @@ import Text.ParserCombinators.Parsec
 
 number :: GenParser Char st Int
 number = do
+    s <- sign
     result <- many1 digit
-    return $ read result
+    return $ s $ read result
+
+sign = (char '-' >> return negate) <|> (optional (char '+') >> return id)
